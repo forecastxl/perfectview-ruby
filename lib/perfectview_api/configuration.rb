@@ -11,7 +11,7 @@ module PerfectviewApi
       @username = opts.fetch(:username)
       @password = opts.fetch(:password)
       @api_key = opts.fetch(:api_key)
-      @database_id = opts.fetch(:database_id)
+      @database_id = opts.fetch(:database_id){ nil }
       @user_id = opts.fetch(:user_id)
     end
 

@@ -24,7 +24,7 @@ module PerfectviewApi
       {
         'credentials' => {
           'ApiKey' => @configuration.api_key,
-          'DatabaseId' => @configuration.database_id,
+          #'DatabaseId' => @configuration.database_id,
           'UserId' => @configuration.user_id,
           'UserName' => @configuration.username,
           'Password' => @configuration.password
