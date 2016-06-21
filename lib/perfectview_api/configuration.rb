@@ -12,16 +12,14 @@ module PerfectviewApi
       @password = opts.fetch(:password)
       @api_key = opts.fetch(:api_key)
       @database_id = opts.fetch(:database_id){ nil }
-      @user_id = opts.fetch(:user_id)
+      #@user_id = opts.fetch(:user_id){ nil }
     end
 
     def to_hash
       {
         "username" => @username,
         "password" => @password,
-        "api_key" => @api_key,
-        "database_id" => @database_id,
-        "user_id" => @user_id,
+        "api_key" => @api_key
       }
     end
   end
