@@ -21,14 +21,17 @@ module PerfectviewApi
     end
 
     def authorization_payload
-      {
+      payload = {
         'credentials' => {
           'ApiKey' => @configuration.api_key,
-          #'DatabaseId' => @configuration.database_id,
           'UserId' => @configuration.user_id,
           'UserName' => @configuration.username,
           'Password' => @configuration.password
       }}
+
+      payload['credentials'].merge({'DatabaseId' => @configuration.database_id}) if @configuration.database_id
+
+      payload
     end
   end
 end
