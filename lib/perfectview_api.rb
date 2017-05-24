@@ -1,14 +1,12 @@
 # require "numbers_api/nokogiri"
-require "savon"
+require 'savon'
 
 module PerfectviewApi
-
   WSDLS = {
-    :main => "https://api.perfectview.nl/PerfectView.asmx?WSDL",
-  }
-
+    main: 'https://api.perfectview.nl/PerfectView.asmx?WSDL'
+  }.freeze
 end
 
-require "perfectview_api/configuration"
-require "perfectview_api/client"
-require "perfectview_api/version"
+require 'perfectview-ruby/configuration'
+require 'perfectview-ruby/client'
+require 'perfectview-ruby/version'

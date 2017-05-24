@@ -8,7 +8,7 @@ PRY_PATH=$(which pry)
 
 if [ -x $PRY_PATH ]
 then
-  exec bundle exec ruby $PRY_PATH -Ilib -r perfectview_api -r perfectview_api/console.rb
+  exec bundle exec ruby $PRY_PATH -Ilib -r perfectview-ruby -r perfectview-ruby/console.rb
 else
   red='\033[0;31m'
   NC='\033[0m'

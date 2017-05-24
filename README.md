@@ -3,7 +3,7 @@
 
 ## Installation
 
-    $ gem install perfectview_api
+    $ gem install perfectview-ruby
 
 
 ## Example Usage

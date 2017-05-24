@@ -1,6 +1,5 @@
 module PerfectviewApi
   class Client
-
     attr_accessor :configuration
 
     #
@@ -10,7 +9,7 @@ module PerfectviewApi
       @configuration = configuration
 
       @client = Savon.client(
-        wsdl: "https://api.perfectview.nl/PerfectView.asmx?WSDL",
+        wsdl: 'https://api.perfectview.nl/PerfectView.asmx?WSDL',
         env_namespace: :soap,
         pretty_print_xml: true
       )
@@ -28,24 +27,23 @@ module PerfectviewApi
       payload = {
         'credentials' => {
           'ApiKey' => @configuration.api_key,
-          #'UserId' => @configuration.user_id,
+          # 'UserId' => @configuration.user_id,
           'UserName' => @configuration.username,
           'Password' => @configuration.password
-      }}
+        }
+      }
 
-      payload['credentials'].merge!({'DatabaseId' => @configuration.database_id}) if @configuration.database_id
+      payload['credentials']['DatabaseId'] = @configuration.database_id if @configuration.database_id
 
       payload
     end
 
     def pagination_payload
       authorization_payload.merge(
-        {
-          'pageNumber' =>  1 || @page_number,
-          'pageSize' => 50 || @page_size,
-          'includeFields' => true,
-          'includeCounters' => true
-        }
+        'pageNumber' => 1 || @page_number,
+        'pageSize' => 50 || @page_size,
+        'includeFields' => true,
+        'includeCounters' => true
       )
     end
   end
